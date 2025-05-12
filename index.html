@@ -12,7 +12,11 @@
         <h1>Todo</h1>
         <div class="card">
             <div class="card-header d-flex">
-              <button type="button" class="btn btn-primary" >Completed all</button>
+              <button type="button" class="btn btn-primary" 
+               @click="onClickCompletedAllButton()"
+              >
+                Completed all
+              </button>
               <!-- new todo -->
               <div class="ms-2 flex-grow-1" >
                 <input 
@@ -56,7 +60,7 @@
                   </ul>
             </div>
             <div class="card-footer text-body-secondary d-flex justify-content-between align-items-center">
-                <span >3 teendő</span>
+                <span >{{counter}} {{items}} left</span>
                 <div>
                     <button type="button" class="btn btn-outline-primary">All</button>
 

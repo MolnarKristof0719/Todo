@@ -22,7 +22,8 @@ const { createApp } = Vue
             new Todo("todo 4"),
             new Todo("todo 5")
         ],
-        newTodoName: null
+        newTodoName: null,
+        completedAll : true,
         }
       },
       methods:{
@@ -43,7 +44,21 @@ const { createApp } = Vue
           const newTodo = new Todo(this.newTodoName);
           this.todoCollection.push(newTodo);
           this.newTodoName = null;
+        },
+        onClickCompletedAllButton(){
+          for (const item of this.todoCollection) {
+            item.completed = this.completedAll;
+          }
+          this.completedAll = !this.completedAll;
         }
-      }
+      },
+      computed:{
+          counter(){
+            return (this.todoCollection.filter(x=>!x.completed)).length;
+          },
+          items(){
+            return this.counter > 1  ? "items" : "item";
+          }
+        }
     }
   ).mount('#app')
