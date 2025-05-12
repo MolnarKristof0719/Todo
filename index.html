@@ -33,9 +33,9 @@
                             <label class="form-check-label" for="complete"></label>
                           </div>
                         <!-- todo.name view -->
-                          <span>{{item.name}} {{ item.completed ? "kész" : "folyamatban"}}</span>
+                          <span v-if="!item.editing">{{item.name}} {{ item.completed ? "kész" : "folyamatban"}}</span>
                         <!-- todo.name edit -->
-                        <div class="ms-2 flex-grow-1" >
+                        <div class="ms-2 flex-grow-1" v-if="item.editing">
                             <input 
                             type="text"
                             class="form-control"
