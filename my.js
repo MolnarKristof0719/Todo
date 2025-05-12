@@ -1,9 +1,28 @@
+class Todo {
+    constructor(name = null) {
+        this.name = name;
+        this.completed = false;
+        this.editing = false;
+    }
+    
+   
+    
+}
+
+
 const { createApp } = Vue
 
   createApp({
     data() {
       return {
-        message: 'Hello Vue!'
+        todoCollection:[
+            new Todo("todo 1"),
+            new Todo("todo 2"),
+            new Todo("todo 3"),
+            new Todo("todo 4"),
+            new Todo("todo 5")
+        ]
+        }
       }
     }
-  }).mount('#app')
+  ).mount('#app')

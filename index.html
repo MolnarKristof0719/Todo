@@ -24,10 +24,12 @@
             <div class="card-body">
                 <ul class="list-group">
                     
-                    <li class="list-group-item d-flex flex-grow-1 align-items-center">
+                    <li class="list-group-item d-flex flex-grow-1 align-items-center"
+                        v-for="item in todoCollection" :key="index"
+                    >
                         <!-- todo.complete: checkbox -->
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="complete">
+                            <input class="form-check-input" type="checkbox" value="" :id="`complete${index}`">
                             <label class="form-check-label" for="complete"></label>
                           </div>
                         <!-- todo.name view -->
@@ -37,6 +39,7 @@
                             <input 
                             type="text"
                             class="form-control"
+                                v-model="item.name"
                             />
                           </div>
                     </li>
