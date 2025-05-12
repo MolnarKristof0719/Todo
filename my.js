@@ -23,6 +23,9 @@ const { createApp } = Vue
             new Todo("todo 5")
         ]
         }
+      },
+      methods:{
+        
       }
     }
   ).mount('#app')

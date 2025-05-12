@@ -29,11 +29,11 @@
                     >
                         <!-- todo.complete: checkbox -->
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" :id="`complete${index}`">
+                            <input class="form-check-input" type="checkbox" value="" :id="`complete${index}`" v-model="item.completed">
                             <label class="form-check-label" for="complete"></label>
                           </div>
                         <!-- todo.name view -->
-                          <span>todo1</span>
+                          <span>{{item.name}} {{ item.completed ? "kész" : "folyamatban"}}</span>
                         <!-- todo.name edit -->
                         <div class="ms-2 flex-grow-1" >
                             <input 
