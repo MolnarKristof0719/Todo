@@ -33,7 +33,11 @@
                             <label class="form-check-label" for="complete"></label>
                           </div>
                         <!-- todo.name view -->
-                          <span v-if="!item.editing">{{item.name}} {{ item.completed ? "kész" : "folyamatban"}}</span>
+                          <span v-if="!item.editing" 
+                          class="ms-5"
+                          :class= "completedClass(item.completed)">
+                          {{item.name}}
+                        </span>
                         <!-- todo.name edit -->
                         <div class="ms-2 flex-grow-1" v-if="item.editing">
                             <input 

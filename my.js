@@ -25,7 +25,12 @@ const { createApp } = Vue
         }
       },
       methods:{
-        
+        completedClass(completed){
+            return {
+            'my-line-through' : completed,
+            'my-red' : completed
+            }
+        }
       }
     }
   ).mount('#app')
